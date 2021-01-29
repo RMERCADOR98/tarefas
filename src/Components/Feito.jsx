@@ -36,9 +36,12 @@ const Feito = ({ deleteTarefa }) => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post("https://tarefass-api.herokuapp.com/api/v1/criarTarefa", tarefa);
+    await axios.post(
+      "https://tarefass-api.herokuapp.com/api/v1/criarTarefa",
+      tarefa
+    );
     window.location.reload();
   };
 

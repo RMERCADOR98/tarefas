@@ -11,8 +11,8 @@ import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
 library.add(faCheckSquare, faCoffee);
 
 const Home = () => {
-  const deleteTarefa = (id) => {
-    axios.delete(`https://tarefass-api.herokuapp.com/api/v1/${id}`);
+  const deleteTarefa = async (id) => {
+    await axios.delete(`https://tarefass-api.herokuapp.com/api/v1/${id}`);
     window.location.reload();
   };
   return (

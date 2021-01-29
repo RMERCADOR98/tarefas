@@ -25,14 +25,14 @@ const Dropdown = ({ data }) => {
     window.location.reload();
   };
 
-  const pushFazer = () => {
+  const pushFazer = async () => {
     const { id } = data;
 
     const fazer = {
       estado: "fazer",
     };
 
-    axios.put(
+    await axios.put(
       `https://tarefass-api.herokuapp.com/api/v1/editarTarefa/${id}`,
       fazer
     );
@@ -42,14 +42,14 @@ const Dropdown = ({ data }) => {
     window.location.reload();
   };
 
-  const pushFeito = () => {
+  const pushFeito = async () => {
     const { id } = data;
 
     const feito = {
       estado: "feito",
     };
 
-    axios.put(
+    await axios.put(
       `https://tarefass-api.herokuapp.com/api/v1/editarTarefa/${id}`,
       feito
     );

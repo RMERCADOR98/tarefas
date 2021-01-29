@@ -25,7 +25,7 @@ const Modal = ({ data }) => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
 
-  const submitTarefa = (e) => {
+  const submitTarefa = async (e) => {
     e.preventDefault();
 
     const { id } = data;
@@ -34,7 +34,7 @@ const Modal = ({ data }) => {
       tarefa: state.tarefa,
     };
 
-    axios.put(
+    await axios.put(
       `https://tarefass-api.herokuapp.com/api/v1/editarTarefa/${id}`,
       tarefaEditada
     );
